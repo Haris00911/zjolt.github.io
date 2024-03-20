@@ -77,29 +77,22 @@ button:hover, button:focus {
 button:active {
     background-color: #00B400;
 }
+
 .footer {
     text-align: center;
     padding: 5px;
     background: #f8f9fc;
     font-size: 12px;
-    /* If you want the footer to grow with the content, remove the position absolute */
     width: 100%;
-    /* Use margin-top to push the footer to the bottom if you remove position absolute */
+    position: absolute; /* Absolute position to the bottom */
+    bottom: 0; /* Stick to the bottom */
+    left: 0; /* Align to the left */
 }
-
-.logo-container {
-    /* Center the logo container within the footer */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 10px; /* Adjust the space between the text and the logo */
-}
-
 .rotating-logo {
-    width: 100px; /* Adjust width as necessary */
-    height: auto; /* Maintain aspect ratio */
-    display: block;
-}
+  width: 100px; /* or any other size you prefer */
+  height: 100px; /* to maintain aspect ratio */
+  display: block;
+  margin: 10px auto; /* this centers the video in the page */
 
 }
 /* Responsive adjustments for very small screens */
