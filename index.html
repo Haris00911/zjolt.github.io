@@ -3,39 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="https://fonts.googleapis.com/css2?family=Sora:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@700&display=swap" rel="stylesheet">
     <title>Pre-Qualification Tool</title>
     <link rel="stylesheet" href="style.css"> <!-- Link to CSS file -->
     <script defer src="script.js"></script> <!-- Link to JavaScript file -->
 </head>
 <body>
     <div id="app">
-        <!-- Question Frames -->
+        <!-- Question 1 Frame -->
         <div class="frame" id="question1-frame">
             <div class="question">Do you own your building?</div>
-            <button class="yes-btn">Yes</button>
-            <button class="no-btn">No</button>
+            <div class="button-container">
+                <button class="yes-btn">Yes</button>
+                <button class="no-btn">No</button>
+            </div>
         </div>
+
+        <!-- Question 2 Frame -->
         <div class="frame" id="question2-frame">
             <div class="question">For Profit Business?</div>
-            <button class="yes-btn">Yes</button>
-            <button class="no-btn">No</button>
+            <div class="button-container">
+                <button class="yes-btn">Yes</button>
+                <button class="no-btn">No</button>
+            </div>
         </div>
 
         <!-- Input Frame -->
         <div class="frame" id="input-frame">
+            <div class="question">Please enter the following information:</div>
             <label for="electric-bill">What is your average electric bill?</label>
             <input type="number" id="electric-bill">
             <label for="electric-rate">What is your electric rate?</label>
             <input type="number" id="electric-rate">
-            <button class="calculate-btn">Calculate</button>
+            <div class="button-container">
+                <button class="calculate-btn">Calculate</button>
+            </div>
         </div>
 
         <!-- Result Frame -->
         <div class="frame" id="result-frame">
-            <div id="result-label"></div>
+            <div id="result-label" class="question"></div>
             <div id="results-entry"></div>
-            <button class="home-btn">Home</button>
+            <div class="button-container">
+                <button class="home-btn">Home</button>
+            </div>
         </div>
 
         <!-- Footer -->
