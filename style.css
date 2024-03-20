@@ -90,7 +90,7 @@ button:active {
 }
 .rotating-logo {
   width: 100px; /* or any other size you prefer */
-  height: auto; /* to maintain aspect ratio */
+  height: 100px; /* to maintain aspect ratio */
   display: block;
   margin: 10px auto; /* this centers the video in the page */
 }
