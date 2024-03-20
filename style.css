@@ -1,4 +1,4 @@
-/* style.css */
+/* Updated style.css */
 body, html {
     font-family: 'Sora', sans-serif;
     background: #f8f9fc;
@@ -16,37 +16,46 @@ body, html {
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    width: 80%;
+    max-width: 600px; /* Adjust width for better fit on tablets */
 }
 
 .frame.active {
-    display: block; /* Only show the active frame */
+    display: flex; /* Use flex layout to position buttons */
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center;
+    justify-content: center;
 }
 
 .question {
-    font-size: 16px;
+    font-size: 24px; /* Increased font size */
+    font-weight: bold;
     margin-bottom: 20px;
-}
-
-input[type="number"] {
-    margin: 10px 0;
-    padding: 10px;
-    font-size: 16px;
+    color: black;
     width: 100%;
+    text-align: center;
 }
 
 button {
-    margin: 10px 0;
-    padding: 10px 20px;
-    font-size: 16px;
+    margin: 10px;
+    padding: 20px 40px; /* Larger padding for finger-friendly touch */
+    font-size: 24px; /* Increased font size */
+    font-weight: bold;
     color: white;
-    background-color: #4e73df;
+    background-color: #A6DA00; /* The green background color for buttons */
     border: none;
+    border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    width: 45%; /* Button width to fill half of the container */
 }
 
-button:hover {
-    background-color: #2e59d9;
+button:hover, button:focus {
+    background-color: #00B400; /* Color changes when hovered or clicked */
+}
+
+button:active {
+    background-color: #00B400; /* Color for when the button is actively pressed */
 }
 
 .footer {
@@ -57,4 +66,14 @@ button:hover {
     padding: 10px;
     background: #f8f9fc;
     font-size: 12px;
+}
+
+/* Additional style for responsive design */
+@media (max-width: 768px) {
+    .frame {
+        width: 95%;
+    }
+    .question, button {
+        font-size: 20px; /* Slightly smaller font size for smaller devices */
+    }
 }
