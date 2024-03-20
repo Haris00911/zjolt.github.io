@@ -1,79 +1,86 @@
-/* Increased specificity and !important to override other styles */
+/* Updated style.css */
 body, html {
-    font-family: 'Sora', sans-serif !important;
-    background: #f8f9fc !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    height: 100vh !important;
+    font-family: 'Sora', sans-serif;
+    background: #f8f9fc;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 .frame {
-    display: none !important; /* Initially hide all frames */
-    background: white !important;
-    padding: 20px !important;
-    border-radius: 5px !important;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1) !important;
-    width: 80% !important;
-    max-width: 600px; /* Adjust width for better fit on tablets */
+    display: none; /* Initially hide all frames */
+    background: white;
+    padding: 40px; /* Increase padding */
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    width: 100%; /* Use full width for larger size */
+    max-width: 1200px; /* Set max-width to scale up */
+    box-sizing: border-box; /* Include padding in the width */
 }
 
 .frame.active {
-    display: flex !important; /* Use flex layout to position buttons */
-    flex-direction: column !important; /* Stack elements vertically */
-    align-items: center !important;
-    justify-content: center !important;
+    display: flex; /* Use flex layout to position buttons */
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center;
+    justify-content: center;
 }
 
 .question {
-    font-size: 24px !important; /* Increased font size */
-    font-weight: bold !important;
-    margin-bottom: 20px !important;
-    color: black !important;
-    width: 100% !important;
-    text-align: center !important;
+    font-size: 48px; /* Increased font size for visibility */
+    font-weight: bold;
+    margin-bottom: 40px;
+    color: black;
+    width: 100%;
+    text-align: center;
+}
+
+.frame.active .button-container {
+    display: flex; /* Align buttons horizontally */
+    justify-content: center;
+    width: 100%;
 }
 
 button {
-    margin: 10px !important;
-    padding: 20px 40px !important; /* Larger padding for finger-friendly touch */
-    font-size: 24px !important; /* Increased font size */
-    font-weight: bold !important;
-    color: white !important;
-    background-color: #A6DA00 !important; /* The green background color for buttons */
-    border: none !important;
-    border-radius: 5px !important;
-    cursor: pointer !important;
-    transition: background-color 0.3s ease !important;
-    width: 45% !important; /* Button width to fill half of the container */
+    margin: 20px;
+    padding: 40px 80px; /* Larger padding for finger-friendly touch */
+    font-size: 48px; /* Increased font size */
+    font-weight: bold;
+    color: white;
+    background-color: #A6DA00;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    flex-grow: 1; /* Buttons take equal space */
 }
 
 button:hover, button:focus {
-    background-color: #00B400 !important; /* Color changes when hovered or clicked */
+    background-color: #00B400;
 }
 
 button:active {
-    background-color: #00B400 !important; /* Color for when the button is actively pressed */
+    background-color: #00B400;
 }
 
 .footer {
-    position: absolute !important;
-    bottom: 0 !important;
-    width: 100% !important;
-    text-align: center !important;
-    padding: 10px !important;
-    background: #f8f9fc !important;
-    font-size: 12px !important;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    background: #f8f9fc;
+    font-size: 24px;
 }
 
-/* Additional style for responsive design */
+/* Additional responsive adjustments */
 @media (max-width: 768px) {
     .frame {
-        width: 95% !important;
+        padding: 20px;
     }
     .question, button {
-        font-size: 20px !important; /* Slightly smaller font size for smaller devices */
+        font-size: 36px;
     }
 }
