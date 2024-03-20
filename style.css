@@ -83,3 +83,59 @@ button:active {
     font-size: 20px;
     width: 100%;
     position
+/* Enhanced sizes and smaller buttons for very small screens */
+@media only screen and (max-width: 414px) {
+    /* Adjust font sizes for buttons and labels on smaller screens */
+    .question, label, #results-entry, .footer {
+        font-size: 18px; /* Slightly smaller font size for small screens */
+    }
+
+    /* Smaller buttons for fitting everything on one page */
+    button {
+        padding: 15px 30px; /* Reduced padding for smaller buttons */
+        font-size: 22px; /* Smaller font size for button text */
+    }
+    
+    /* Adjust the button container margins and paddings if necessary */
+    .button-container {
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Ensure the app container fits within the new viewport width */
+    #app {
+        width: 95vw; /* Maintain 95vw width for the app on mobile */
+        margin-top: 10vh; /* Adjust top margin to avoid cutting off the top on mobile */
+    }
+
+    /* Adjust frame padding for mobile */
+    .frame {
+        padding: 10px;
+    }
+
+    /* Smaller footer font size for mobile screens */
+    .footer {
+        font-size: 14px;
+    }
+}
+
+/* Additional responsive adjustments for other small screens */
+@media only screen and (max-width: 600px) {
+    /* Styles for screens that are wider than 414px but less than 600px */
+    .question, label, #results-entry, .footer {
+        font-size: 18px; /* Slightly larger font size than for very small screens */
+    }
+
+    .frame {
+        padding: 15px; /* A bit more padding than for the smallest screens */
+    }
+
+    button {
+        padding: 20px 35px; /* A bit larger button padding than for the smallest screens */
+        font-size: 24px; /* A bit larger button font size than for the smallest screens */
+    }
+
+    .footer {
+        font-size: 16px; /* Slightly larger footer font size than for very small screens */
+    }
+}
