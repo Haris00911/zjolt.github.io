@@ -30,7 +30,7 @@ body, html {
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     width: 100%; /* Use full width for larger size */
-    margin-bottom: 10px; /* Space before footer */
+    margin-bottom: 20px; /* Space before footer */
 }
 
 .frame.active {
@@ -80,7 +80,7 @@ button:active {
 
 .footer {
     text-align: center;
-    padding: 15px;
+    padding: 5px;
     background: #f8f9fc;
     font-size: 12px;
     width: 100%;
