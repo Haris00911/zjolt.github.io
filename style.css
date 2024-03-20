@@ -4,7 +4,7 @@ body, html {
     background: #F6F6F6;
     margin: 0;
     padding: 0;
-    width: 100vw; /* Ensure the body takes the full viewport width */
+    width: 95vw; /* Ensure the body takes the full viewport width */
     overflow-x: hidden; /* Hide horizontal scrollbar caused by full viewport width */
     display: flex;
     justify-content: center;
