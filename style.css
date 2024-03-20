@@ -6,7 +6,6 @@ body, html {
     padding: 0;
     width: 100vw; /* Ensure the body takes the full viewport width */
     overflow-x: hidden; /* Hide horizontal scrollbar caused by full viewport width */
-
     display: flex;
     justify-content: center;
     align-items: center; /* Centering vertically */
@@ -17,7 +16,11 @@ body, html {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: -8vh; /* Slightly raise the app window for visual balance */
+    width: calc(100% - 40px); /* Adjust for padding */
+    max-width: 1200px; /* Set max-width to scale up */
+    margin: auto; /* Center the app in the viewport */
+    position: relative; /* For absolute positioning of the footer */
+    padding-bottom: 20px; /* Space for the footer */
 }
 
 .frame {
@@ -27,8 +30,6 @@ body, html {
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     width: 100%; /* Use full width for larger size */
-    max-width: 1200px; /* Set max-width to scale up */
-    box-sizing: border-box; /* Include padding in the width */
     margin-bottom: 10px; /* Space before footer */
 }
 
@@ -66,7 +67,7 @@ button {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    flex:1; /* Don't grow or shrink */
+    flex: 1; /* Grow to fit container */
 }
 
 button:hover, button:focus {
@@ -83,55 +84,53 @@ button:active {
     background: #f8f9fc;
     font-size: 12px;
     width: 100%;
-    position: relative; /* Position relative to its normal position */
-	
+    position: absolute; /* Absolute position to the bottom */
+    bottom: 0; /* Stick to the bottom */
+    left: 0; /* Align to the left */
+}
+
 /* Responsive adjustments for very small screens */
 @media only screen and (max-width: 414px) {
-    /* Adjust font sizes for buttons and labels on smaller screens */
     .question, label, #results-entry, .footer {
         font-size: 18px; /* Slightly smaller font size for small screens */
     }
 
-    /* 25% smaller buttons for fitting everything on one page */
     button {
-        padding: 30px 60px; /* 25% smaller padding for smaller buttons */
-        font-size: 36px; /* 25% smaller font size for button text */
-    }
-    
-    /* Adjust the button container margins and paddings if necessary */
-    .button-container {
-        margin: 0;
-        padding: 0;
+        padding: 30px 60px; /* Adjusted padding for smaller buttons */
+        font-size: 36px; /* Adjusted font size for button text */
     }
 
-    /* Adjust frame padding for mobile */
     .frame {
-        padding: 10px;
+        padding: 10px; /* Reduced padding for frames */
     }
 
-    /* Smaller footer font size for mobile screens */
     .footer {
-        font-size: 15px;
+        font-size: 15px; /* Smaller footer font size for mobile screens */
     }
 }
 
 /* Apply the same size reductions to other small screens, if desired */
 @media only screen and (max-width: 600px) {
-    /* Styles for screens that are wider than 414px but less than 600px */
     .question, label, #results-entry, .footer {
-        font-size: 21px; /* Adjust if necessary */
-    }
-
-    .frame {
-        padding: 15px; /* A bit more padding than for the smallest screens */
+        font-size: 21px; /* Adjust font size if necessary */
     }
 
     button {
-        padding: 30px 60px; /* 25% smaller button padding than original size */
-        font-size: 36px; /* 25% smaller button font size than original size */
+        padding: 30px 60px; /* Adjust padding if necessary */
+        font-size: 36px; /* Adjust font size if necessary */
     }
 
     .footer {
-        font-size: 15px; /* Adjust if necessary */
+        font-size: 15px; /* Adjust footer font size if necessary */
+    }
+}
+
+/* Ensure footer stays at the bottom on all screens */
+@media (min-width: 600px) {
+    .footer {
+        position: absolute; /* Keep footer at the bottom */
+        bottom: 0;
+        width: 100%;
+        font-size: 20px; /* Adjust font size for larger screens */
     }
 }
