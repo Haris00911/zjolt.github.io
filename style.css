@@ -29,7 +29,7 @@ body, html {
     width: 100%; /* Use full width for larger size */
     max-width: 1200px; /* Set max-width to scale up */
     box-sizing: border-box; /* Include padding in the width */
-    margin-bottom: 20px; /* Space before footer */
+    margin-bottom: 10px; /* Space before footer */
 }
 
 .frame.active {
@@ -57,7 +57,7 @@ body, html {
 
 button {
     margin: 20px;
-    padding: 40px 80px; /* Larger padding for finger-friendly touch */
+    padding: 30px 60px; /* Larger padding for finger-friendly touch */
     font-size: 48px; /* Increased font size */
     font-weight: bold;
     color: white;
