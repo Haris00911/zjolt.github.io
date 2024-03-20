@@ -19,8 +19,8 @@ body, html {
     width: calc(100% - 40px); /* Adjust for padding */
     max-width: 1200px; /* Set max-width to scale up */
     margin: auto; /* Center the app in the viewport */
-    min-height: 100vh; /* Ensure the app container takes at least the height of the viewport */
-    justify-content: space-between; /* Distribute space between child elements */
+    position: relative; /* For absolute positioning of the footer */
+    padding-bottom: 20px; /* Space for the footer */
 }
 
 .frame {
@@ -38,10 +38,6 @@ body, html {
     flex-direction: column; /* Stack elements vertically */
     align-items: center;
     justify-content: center;
-}
-
-.frame:last-child {
-    margin-bottom: 70px; /* Add margin to the bottom of the last frame to create space for the footer */
 }
 
 .question, label, #results-entry {
@@ -71,6 +67,7 @@ button {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    flex: 1; /* Grow to fit container */
 }
 
 button:hover, button:focus {
@@ -80,17 +77,18 @@ button:hover, button:focus {
 button:active {
     background-color: #00B400;
 }
-
 .footer {
     text-align: center;
     padding: 5px;
     background: #f8f9fc;
     font-size: 12px;
-    margin-top: auto; /* This will push the footer down */
+    /* If you want the footer to grow with the content, remove the position absolute */
     width: 100%;
+    /* Use margin-top to push the footer to the bottom if you remove position absolute */
 }
 
 .logo-container {
+    /* Center the logo container within the footer */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -103,6 +101,7 @@ button:active {
     display: block;
 }
 
+}
 /* Responsive adjustments for very small screens */
 @media only screen and (max-width: 414px) {
     .question, label, #results-entry, .footer {
@@ -139,14 +138,12 @@ button:active {
     }
 }
 
-/* Ensure footer stays at the bottom on all screens and is not fixed */
+/* Ensure footer stays at the bottom on all screens */
 @media (min-width: 600px) {
-    #app {
-        justify-content: space-between; /* Push footer to the bottom */
-    }
-
     .footer {
-        margin-top: auto; /* Ensures that the footer is pushed to the bottom */
+        position: absolute; /* Keep footer at the bottom */
+        bottom: 0;
+        width: 100%;
         font-size: 20px; /* Adjust font size for larger screens */
     }
 }
