@@ -31,9 +31,9 @@
         <!-- Input Frame -->
         <div class="frame" id="input-frame">
             <label for="electric-bill">What is your average electric bill?</label>
-			<input type="number" pattern="[0-9]*" id="electric-bill">
+			<input type="number" inputmode="decimal" id="electric-bill" step="0.01" placeholder="e.g., 1500">
             <label for="electric-rate">What is your electric rate?</label>
-            <input type="number" pattern="[0-9]*" id="electric-rate">
+            <input type="number" inputmode="decimal" id="electric-rate" step="0.01" placeholder="e.g., 0.12">
             <div class="button-container">
                 <button class="calculate-btn">Calculate</button>
             </div>
