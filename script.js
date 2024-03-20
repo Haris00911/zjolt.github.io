@@ -1,5 +1,10 @@
 // script.js
 document.addEventListener('DOMContentLoaded', () => {
+    // iOS viewport fix
+    if (/iPhone/i.test(navigator.userAgent)) {
+        document.querySelector("meta[name=viewport]").setAttribute("content", "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no");
+    }
+
     let currentFrame = document.getElementById('question1-frame');
     currentFrame.classList.add('active');
 
