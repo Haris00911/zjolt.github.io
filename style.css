@@ -1,4 +1,4 @@
-/* Updated style.css */
+/* Base Styles */
 body, html {
     font-family: 'Sora', sans-serif;
     background: #F6F6F6;
@@ -17,8 +17,8 @@ body, html {
     margin-top: -8vh; /* Slightly raise the app window for visual balance */
 }
 
-.frame {
-    display: none; /* Initially hide all frames */
+.frame, .frame.active {
+    display: none; /* Initially hide all frames, flex only for .active */
     background: white;
     padding: 40px; /* Increase padding */
     border-radius: 5px;
@@ -30,14 +30,14 @@ body, html {
 }
 
 .frame.active {
-    display: flex; /* Use flex layout to position buttons */
-    flex-direction: column; /* Stack elements vertically */
+    display: flex; /* Reveal the active frame */
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
 .question, label, #results-entry {
-    font-size: 28px; /* Adjust font size for consistency */
+    font-size: 28px; 
     font-weight: bold;
     margin: 20px 0;
     color: black;
@@ -45,33 +45,29 @@ body, html {
 }
 
 .button-container {
-    width: 100%; /* Full width of the container */
+    width: 100%; 
     display: flex;
-    justify-content: center; /* Center buttons horizontally */
-    align-items: center; /* Center buttons vertically */
+    justify-content: center; 
+    align-items: center; 
     flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
 }
 
 button {
     margin: 20px;
-    padding: 40px 80px; /* Larger padding for finger-friendly touch */
-    font-size: 48px; /* Increased font size */
+    padding: 40px 80px; /* Large touch-friendly padding */
+    font-size: 48px; /* Large, readable text */
     font-weight: bold;
     color: white;
-    background-color: #A6DA00;
+    background-color: #A6DA00; /* Vibrant green background */
     border: none;
     border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    flex: 0 0 auto; /* Don't grow or shrink */
+    cursor: pointer; /* Indicates clickable items */
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+    flex: 0 0 auto; /* Don't grow, shrink, or flex */
 }
 
-button:hover, button:focus {
-    background-color: #00B400;
-}
-
-button:active {
-    background-color: #00B400;
+button:hover, button:focus, button:active {
+    background-color: #00B400; /* Darker green on hover/focus/active */
 }
 
 .footer {
@@ -80,42 +76,35 @@ button:active {
     background: #f8f9fc;
     font-size: 20px;
     width: 100%;
-    position: relative; /* Position relative to its normal position */
+    position: relative; 
 }
 
-/* Additional responsive adjustments */
+/* Responsive Adjustments */
 @media (max-width: 768px) {
     #app {
-        margin-top: 5vh; /* Less negative margin for small screens */
+        margin-top: 5vh; 
     }
-    .frame {
-        padding: 20px;
-    }
-    .question, button, label, #results-entry {
-        font-size: 24px;
+    .frame, .question, button, label, #results-entry {
+        padding: 20px; 
+        font-size: 24px; 
     }
     .button-container {
-        flex-direction: column; /* Stack buttons vertically on smaller screens */
+        flex-direction: column; 
     }
 }
 
-/* Put this at the bottom of your CSS file */
-@media only screen and (max-width: 600px) {
-    /* Styles for screens that are 600px wide or less */
+@media (max-width: 600px) {
     .question, label, #results-entry, .footer {
-        font-size: 18px; /* Smaller font size for small screens */
+        font-size: 18px; 
     }
-
     .frame {
-        padding: 20px; /* Smaller padding for small screens */
+        padding: 20px; 
     }
-
     button {
-        padding: 20px 40px; /* Smaller button padding for small screens */
-        font-size: 24px; /* Smaller button font size for small screens */
+        padding: 20px 40px; 
+        font-size: 24px; 
     }
-
     .footer {
-        font-size: 16px; /* Smaller footer font size for small screens */
+        font-size: 16px; 
     }
 }
