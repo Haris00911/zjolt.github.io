@@ -6,6 +6,8 @@ body, html {
     padding: 0;
     width: 95vw; /* Ensure the body takes the full viewport width */
     overflow-x: hidden; /* Hide horizontal scrollbar caused by full viewport width */
+	overflow-y: hidden; /* Hide horizontal scrollbar caused by full viewport height */
+
     display: flex;
     justify-content: center;
     align-items: center; /* Centering vertically */
