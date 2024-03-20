@@ -4,11 +4,14 @@ body, html {
     background: #F6F6F6;
     margin: 0;
     padding: 0;
+    width: 100vw; /* Ensure the body takes the full viewport width */
+    overflow-x: hidden; /* Hide horizontal scrollbar caused by full viewport width */
     display: flex;
     justify-content: center;
     align-items: center; /* Centering vertically */
     min-height: 100vh;
 }
+
 
 #app {
     display: flex;
@@ -95,7 +98,7 @@ button:active {
         font-size: 24px;
     }
     .button-container {
-        flex-direction: row; /* Stack buttons vertically on smaller screens */
+        justify-content: space-around; /* Adjust button spacing on smaller screens */
     }
 }
 
