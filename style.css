@@ -85,9 +85,6 @@ button:active {
     font-size: 12px;
     /* If you want the footer to grow with the content, remove the position absolute */
     width: 100%;
-    position: absolute; /* Absolute position to the bottom */
-    bottom: 0; /* Stick to the bottom */
-    left: 0; /* Align to the left */
     /* Use margin-top to push the footer to the bottom if you remove position absolute */
 }
 
@@ -100,10 +97,6 @@ button:active {
 }
 
 .rotating-logo {
-  width: 100px; /* or any other size you prefer */
-  height: 100px; /* to maintain aspect ratio */
-  display: block;
-  margin: 10px auto; /* this centers the video in the page */
     width: 100px; /* Adjust width as necessary */
     height: auto; /* Maintain aspect ratio */
     display: block;
