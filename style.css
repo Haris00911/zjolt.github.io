@@ -4,16 +4,14 @@ body, html {
     background: #F6F6F6;
     margin: 0;
     padding: 0;
-    width: 95vw; /* Ensure the body takes the full viewport width */
+    width: 100vw; /* Ensure the body takes the full viewport width */
     overflow-x: hidden; /* Hide horizontal scrollbar caused by full viewport width */
-	overflow-y: hidden; /* Hide horizontal scrollbar caused by full viewport height */
-
+    overflow-y: hidden; /* Hide vertical scrollbar to prevent scrolling */
     display: flex;
     justify-content: center;
     align-items: center; /* Centering vertically */
     min-height: 100vh;
 }
-
 
 #app {
     display: flex;
@@ -85,42 +83,4 @@ button:active {
     background: #f8f9fc;
     font-size: 20px;
     width: 100%;
-    position: relative; /* Position relative to its normal position */
-}
-
-/* Additional responsive adjustments */
-@media (max-width: 768px) {
-    #app {
-        margin-top: 5vh; /* Less negative margin for small screens */
-    }
-    .frame {
-        padding: 20px;
-    }
-    .question, button, label, #results-entry {
-        font-size: 24px;
-    }
-    .button-container {
-        justify-content: space-around; /* Adjust button spacing on smaller screens */
-    }
-}
-
-/* Put this at the bottom of your CSS file */
-@media only screen and (max-width: 600px) {
-    /* Styles for screens that are 600px wide or less */
-    .question, label, #results-entry, .footer {
-        font-size: 18px; /* Smaller font size for small screens */
-    }
-
-    .frame {
-        padding: 20px; /* Smaller padding for small screens */
-    }
-
-    button {
-        padding: 20px 40px; /* Smaller button padding for small screens */
-        font-size: 24px; /* Smaller button font size for small screens */
-    }
-
-    .footer {
-        font-size: 16px; /* Smaller footer font size for small screens */
-    }
-}
+    position
