@@ -5,14 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelector("meta[name=viewport]").setAttribute("content", "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no");
     }
 
-    // Attempt to play any videos when the document is first interacted with
-    function playVideos() {
-        const videos = document.querySelectorAll('video');
-        videos.forEach(video => video.play());
-    }
-    
-    document.addEventListener('touchend', playVideos, { once: true });
-
     let currentFrame = document.getElementById('question1-frame');
     currentFrame.classList.add('active');
 
@@ -44,31 +36,32 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('results-entry').textContent = "No Available Incentives";
         });
     });
+	
+// Handle Calculate button
+calculateButton.addEventListener('click', () => {
+    const electricBill = parseFloat(document.getElementById('electric-bill').value);
+    const electricRate = parseFloat(document.getElementById('electric-rate').value);
+    if (!isNaN(electricBill) && !isNaN(electricRate)) {
+        const yearlyBill = electricBill * 12;
+        const yearlyUsage = yearlyBill / electricRate;
+        const systemSize = yearlyUsage / 1.4;
+        const systemCost = systemSize * 2.75;
+        const taxCredit = systemCost * 0.3;
+        const depreciation = systemCost * 0.3;
+        const totalIncentives = taxCredit + depreciation;
 
-    // Handle Calculate button
-    calculateButton.addEventListener('click', () => {
-        const electricBill = parseFloat(document.getElementById('electric-bill').value);
-        const electricRate = parseFloat(document.getElementById('electric-rate').value);
-        if (!isNaN(electricBill) && !isNaN(electricRate)) {
-            const yearlyBill = electricBill * 12;
-            const yearlyUsage = yearlyBill / electricRate;
-            const systemSize = yearlyUsage / 1.4;
-            const systemCost = systemSize * 2.75;
-            const taxCredit = systemCost * 0.3;
-            const depreciation = systemCost * 0.3;
-            const totalIncentives = taxCredit + depreciation;
+        // Format the total incentives to include commas for thousands
+        const formattedIncentives = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(totalIncentives);
 
-            // Format the total incentives to include commas for thousands
-            const formattedIncentives = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(totalIncentives);
+        document.getElementById('result-label').textContent = "Customer Qualifies For Free Design";
+        document.getElementById('result-label').style.backgroundColor = "#A6DA00"; // Light green
+        document.getElementById('results-entry').textContent = `Tax Savings: ${formattedIncentives}`;
+        switchFrame('result-frame');
+    } else {
+        document.getElementById('results-entry').textContent = "Please Confirm Additional Reqs.";
+    }
+});
 
-            document.getElementById('result-label').textContent = "Customer Qualifies For Free Design";
-            document.getElementById('result-label').style.backgroundColor = "#A6DA00"; // Light green
-            document.getElementById('results-entry').textContent = `Tax Savings: ${formattedIncentives}`;
-            switchFrame('result-frame');
-        } else {
-            document.getElementById('results-entry').textContent = "Please Confirm Additional Reqs.";
-        }
-    });
 
     // Handle Home button
     homeButton.addEventListener('click', () => {
