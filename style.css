@@ -93,7 +93,6 @@ button:active {
   height: 100px; /* to maintain aspect ratio */
   display: block;
   margin: 10px auto; /* this centers the video in the page */
-  background: transparent; /* Just for emphasis, not necessary */
 
 }
 /* Responsive adjustments for very small screens */
