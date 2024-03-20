@@ -6,8 +6,14 @@ body, html {
     padding: 0;
     display: flex;
     justify-content: center;
+    align-items: flex-start; /* Align to the top */
+    min-height: 100vh;
+}
+
+#app {
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    height: 100vh;
 }
 
 .frame {
@@ -19,6 +25,7 @@ body, html {
     width: 100%; /* Use full width for larger size */
     max-width: 1200px; /* Set max-width to scale up */
     box-sizing: border-box; /* Include padding in the width */
+    margin-bottom: 20px; /* Space before footer */
 }
 
 .frame.active {
@@ -28,12 +35,11 @@ body, html {
     justify-content: center;
 }
 
-.question {
-    font-size: 48px; /* Increased font size for visibility */
+.question, label, #results-entry {
+    font-size: 36px; /* Adjust font size for consistency */
     font-weight: bold;
-    margin-bottom: 40px;
+    margin: 20px 0;
     color: black;
-    width: 100%;
     text-align: center;
 }
 
@@ -68,13 +74,13 @@ button:active {
 }
 
 .footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
     text-align: center;
     padding: 10px;
     background: #f8f9fc;
     font-size: 24px;
+    width: 100%;
+    position: relative; /* Position relative to its normal position */
+    margin-top: auto; /* Push to bottom */
 }
 
 /* Additional responsive adjustments */
@@ -82,8 +88,8 @@ button:active {
     .frame {
         padding: 20px;
     }
-    .question, button {
-        font-size: 36px;
+    .question, button, label, #results-entry {
+        font-size: 24px;
     }
     .button-container {
         flex-direction: column; /* Stack buttons vertically on smaller screens */
