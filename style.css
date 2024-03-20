@@ -1,7 +1,7 @@
 /* Updated style.css */
 body, html {
     font-family: 'Sora', sans-serif;
-    background: #f8f9fc;
+    background: #F6F6F6;
     margin: 0;
     padding: 0;
     display: flex;
@@ -37,7 +37,7 @@ body, html {
 }
 
 .question, label, #results-entry {
-    font-size: 36px; /* Adjust font size for consistency */
+    font-size: 28px; /* Adjust font size for consistency */
     font-weight: bold;
     margin: 20px 0;
     color: black;
@@ -78,7 +78,7 @@ button:active {
     text-align: center;
     padding: 10px;
     background: #f8f9fc;
-    font-size: 24px;
+    font-size: 20px;
     width: 100%;
     position: relative; /* Position relative to its normal position */
 }
