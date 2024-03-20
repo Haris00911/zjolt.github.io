@@ -51,11 +51,11 @@ calculateButton.addEventListener('click', () => {
         const totalIncentives = taxCredit + depreciation;
 
         // Format the total incentives to include commas for thousands
-        const formattedIncentives = totalIncentives.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        const formattedIncentives = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(totalIncentives);
 
         document.getElementById('result-label').textContent = "Customer Qualifies For Free Design";
         document.getElementById('result-label').style.backgroundColor = "#A6DA00"; // Light green
-        document.getElementById('results-entry').textContent = `Tax Savings: $${formattedIncentives}`;
+        document.getElementById('results-entry').textContent = `Tax Savings: ${formattedIncentives}`;
         switchFrame('result-frame');
     } else {
         document.getElementById('results-entry').textContent = "Please Confirm Additional Reqs.";
