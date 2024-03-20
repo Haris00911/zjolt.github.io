@@ -98,3 +98,24 @@ button:active {
         flex-direction: column; /* Stack buttons vertically on smaller screens */
     }
 }
+
+/* Put this at the bottom of your CSS file */
+@media only screen and (max-width: 600px) {
+    /* Styles for screens that are 600px wide or less */
+    .question, label, #results-entry, .footer {
+        font-size: 18px; /* Smaller font size for small screens */
+    }
+
+    .frame {
+        padding: 20px; /* Smaller padding for small screens */
+    }
+
+    button {
+        padding: 20px 40px; /* Smaller button padding for small screens */
+        font-size: 24px; /* Smaller button font size for small screens */
+    }
+
+    .footer {
+        font-size: 16px; /* Smaller footer font size for small screens */
+    }
+}
