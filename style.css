@@ -6,7 +6,7 @@ body, html {
     padding: 0;
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* Align to the top */
+    align-items: center; /* Centering vertically */
     min-height: 100vh;
 }
 
@@ -14,6 +14,7 @@ body, html {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: -8vh; /* Slightly raise the app window for visual balance */
 }
 
 .frame {
@@ -35,8 +36,33 @@ body, html {
     justify-content: center;
 }
 
+/* Special styling for the result frame background */
+#result-frame.active {
+    background: #A6DA00; /* Full green background like Python app */
+    color: white; /* White text for contrast */
+    padding-top: 60px; /* Larger top padding */
+    padding-bottom: 60px; /* Larger bottom padding */
+}
+
+#result-frame.active #result-label {
+    background: transparent; /* No background for the label */
+}
+
+#result-frame.active button.home-btn {
+    background-color: white; /* White button with green text */
+    color: #A6DA00;
+    font-weight: bold;
+    padding: 20px 40px;
+}
+
+#result-frame.active button.home-btn:hover,
+#result-frame.active button.home-btn:focus {
+    background-color: #A6DA00; /* Revert to green on hover/focus */
+    color: white;
+}
+
 .question, label, #results-entry {
-    font-size: 24px; /* Adjust font size for consistency */
+    font-size: 36px; /* Adjust font size for consistency */
     font-weight: bold;
     margin: 20px 0;
     color: black;
@@ -80,11 +106,13 @@ button:active {
     font-size: 24px;
     width: 100%;
     position: relative; /* Position relative to its normal position */
-    margin-top: auto; /* Push to bottom */
 }
 
 /* Additional responsive adjustments */
 @media (max-width: 768px) {
+    #app {
+        margin-top: 5vh; /* Less negative margin for small screens */
+    }
     .frame {
         padding: 20px;
     }
