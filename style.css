@@ -1,14 +1,13 @@
-/* Updated style.css */
 body, html {
-    font-family: 'Sora', sans-serif;
-    background: #F6F6F6;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #2193b0, #6dd5ed);
     margin: 0;
     padding: 0;
-    width: 100vw; /* Ensure the body takes the full viewport width */
-    overflow-x: hidden; /* Hide horizontal scrollbar caused by full viewport width */
+    width: 100vw;
+    overflow-x: hidden;
     display: flex;
     justify-content: center;
-    align-items: center; /* Centering vertically */
+    align-items: center;
     min-height: 100vh;
 }
 
@@ -16,32 +15,46 @@ body, html {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: calc(100% - 40px); /* Adjust for padding */
-    max-width: 1200px; /* Set max-width to scale up */
-    margin: auto; /* Center the app in the viewport */
-    position: relative; /* For absolute positioning of the footer */
-    padding-bottom: 20px; /* Space for the footer */
+    width: calc(100% - 40px);
+    max-width: 1200px;
+    margin: auto;
+    position: relative;
+    padding-bottom: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+header {
+    text-align: center;
+    padding: 30px;
+    border-bottom: 1px solid #ddd;
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
 }
 
 .frame {
-    display: none; /* Initially hide all frames */
+    display: none;
     background: white;
-    padding: 40px; /* Increase padding */
+    padding: 40px;
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    width: 100%; /* Use full width for larger size */
-    margin-bottom: 20px; /* Space before footer */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    margin-bottom: 20px;
 }
 
 .frame.active {
-    display: flex; /* Use flex layout to position buttons */
-    flex-direction: column; /* Stack elements vertically */
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
 .question, label, #results-entry {
-    font-size: 28px; /* Adjust font size for consistency */
+    font-size: 28px;
     font-weight: bold;
     margin: 20px 0;
     color: black;
@@ -49,17 +62,17 @@ body, html {
 }
 
 .button-container {
-    width: 100%; /* Full width of the container */
+    width: 100%;
     display: flex;
-    justify-content: center; /* Center buttons horizontally */
-    align-items: center; /* Center buttons vertically */
-    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 button {
     margin: 20px;
-    padding: 30px 60px; /* Larger padding for finger-friendly touch */
-    font-size: 48px; /* Increased font size */
+    padding: 30px 60px;
+    font-size: 48px;
     font-weight: bold;
     color: white;
     background-color: #A6DA00;
@@ -67,7 +80,7 @@ button {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    flex: 1; /* Grow to fit container */
+    flex: 1;
 }
 
 button:hover, button:focus {
@@ -78,59 +91,37 @@ button:active {
     background-color: #00B400;
 }
 
-.footer {
-    text-align: center;
-    padding: 5px;
-    background: #f6f6f6;
-    font-size: 12px;
-    width: 100%;
-    position: absolute; /* Absolute position to the bottom */
-    bottom: 0; /* Stick to the bottom */
-    left: 0; /* Align to the left */
+.contact-btn {
+    background-color: #007bff;
 }
 
-/* Responsive adjustments for very small screens */
+.contact-btn:hover, .contact-btn:focus {
+    background-color: #0062cc;
+}
+
+/* Responsive adjustments */
 @media only screen and (max-width: 414px) {
-    .question, label, #results-entry, .footer {
-        font-size: 18px; /* Slightly smaller font size for small screens */
+    .question, label, #results-entry {
+        font-size: 18px;
     }
 
     button {
-        padding: 30px 60px; /* Adjusted padding for smaller buttons */
-        font-size: 36px; /* Adjusted font size for button text */
+        padding: 30px 60px;
+        font-size: 36px;
     }
 
     .frame {
-        padding: 10px; /* Reduced padding for frames */
-    }
-
-    .footer {
-        font-size: 15px; /* Smaller footer font size for mobile screens */
+        padding: 10px;
     }
 }
 
-/* Apply the same size reductions to other small screens, if desired */
 @media only screen and (max-width: 600px) {
-    .question, label, #results-entry, .footer {
-        font-size: 21px; /* Adjust font size if necessary */
+    .question, label, #results-entry {
+        font-size: 21px;
     }
 
     button {
-        padding: 30px 60px; /* Adjust padding if necessary */
-        font-size: 36px; /* Adjust font size if necessary */
-    }
-
-    .footer {
-        font-size: 15px; /* Adjust footer font size if necessary */
-    }
-}
-
-/* Ensure footer stays at the bottom on all screens */
-@media (min-width: 600px) {
-    .footer {
-        position: absolute; /* Keep footer at the bottom */
-        bottom: 0;
-        width: 100%;
-        font-size: 20px; /* Adjust font size for larger screens */
+        padding: 30px 60px;
+        font-size: 36px;
     }
 }

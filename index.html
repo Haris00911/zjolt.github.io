@@ -3,13 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <title>Pre-Qualification Tool</title>
-    <link rel="stylesheet" href="style.css"> <!-- Link to CSS file -->
-    <script defer src="script.js"></script> <!-- Link to JavaScript file -->
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
     <div id="app">
+        <header>
+            <h1>Pre-Qualification Tool</h1>
+            <p>See if you qualify for solar incentives!</p>
+        </header>
+
         <!-- Question 1 Frame -->
         <div class="frame" id="question1-frame">
             <div class="question">Do you own your building?</div>
@@ -31,7 +36,7 @@
         <!-- Input Frame -->
         <div class="frame" id="input-frame">
             <label for="electric-bill">What is your average electric bill?</label>
-			<input type="number" inputmode="decimal" id="electric-bill" step="0.01" placeholder="e.g., 1500">
+            <input type="number" inputmode="decimal" id="electric-bill" step="0.01" placeholder="e.g., 1500">
             <label for="electric-rate">What is your electric rate?</label>
             <input type="number" inputmode="decimal" id="electric-rate" step="0.01" placeholder="e.g., 0.12">
             <div class="button-container">
@@ -45,12 +50,8 @@
             <div id="results-entry"></div>
             <div class="button-container">
                 <button class="home-btn">Home</button>
+                <button class="contact-btn">Contact Us</button>
             </div>
-        </div>
-
-        <!-- Footer -->
-        <div class="footer">
-            Haris Guard - Erco Energy - (210) 972-8382 - hguard@erco.energy
         </div>
     </div>
 </body>
