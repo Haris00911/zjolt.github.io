@@ -7,9 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentFrame = document.getElementById('question1-frame');
     currentFrame.classList.add('active');
 
-    const yesButtons = document.querySelectorAll('.yes-btn');
     const noButtons = document.querySelectorAll('.no-btn');
-    const calculateButton = document.querySelector('.calculate-btn');
+    const calculateButton = document.querySelector('.yes-btn');
     const homeButton = document.querySelector('.home-btn');
     const contactButton = document.querySelector('.contact-btn');
 
@@ -20,13 +19,6 @@ document.addEventListener('DOMContentLoaded', () => {
         currentFrame.classList.add('active');
     }
 
-    // Handle Yes/No buttons for questions
-    yesButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const nextFrameId = button.closest('.frame').nextElementSibling.id;
-            switchFrame(nextFrameId);
-        });
-    });
 
     noButtons.forEach(button => {
         button.addEventListener('click', () => {
@@ -39,25 +31,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Handle Calculate button
     calculateButton.addEventListener('click', () => {
-        const electricBill = parseFloat(document.getElementById('electric-bill').value);
-        const electricRate = parseFloat(document.getElementById('electric-rate').value);
-        if (!isNaN(electricBill) && !isNaN(electricRate)) {
-            const yearlyBill = electricBill * 12;
-            const yearlyUsage = yearlyBill / electricRate;
-            const systemSize = yearlyUsage / 1.4;
-            const systemCost = systemSize * 2.75;
-            const taxCredit = systemCost * 0.3;
-            const depreciation = systemCost * 0.3;
-            const totalIncentives = taxCredit + depreciation;
+        const averageBill = parseFloat(document.getElementById('average-bill').value);
+        const increaseRate = parseFloat(document.getElementById('increase-rate').value) / 100 + 1; // Convert percentage to multiplier
+        if (!isNaN(averageBill) && !isNaN(increaseRate)) {
+            let result = averageBill;
+            for (let year = 1; year <= 25; year++) {
+                result *= increaseRate;
+            }
 
-            const formattedIncentives = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(totalIncentives);
+            const formattedResult = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(result);
 
-            document.getElementById('result-label').textContent = "Customer Qualifies For Free Design";
-            document.getElementById('result-label').style.backgroundColor = "#A6DA00";
-            document.getElementById('results-entry').textContent = `Tax Savings: ${formattedIncentives}`;
+            document.getElementById('result-label').textContent = "Monthly Bill in 25 Years";
+            document.getElementById('results-entry').textContent = `${formattedResult}`;
             switchFrame('result-frame');
         } else {
-            document.getElementById('results-entry').textContent = "Please Confirm Additional Reqs.";
+            document.getElementById('result-label').textContent = "Invalid Input";
+            document.getElementById('results-entry').textContent = "Please enter valid numbers.";
         }
     });
 

@@ -12,32 +12,14 @@
     <div id="app">
         <!-- Question 1 Frame -->
         <div class="frame" id="question1-frame">
-            <div class="question">Do you own your building?</div>
-            <div class="button-container">
-                <button class="yes-btn">Yes</button>
-                <button class="no-btn">No</button>
+            <label for="average-bill">Average Monthly Bill:</label>
+            <input type="number" inputmode="decimal" id="average-bill" step="0.01" placeholder="e.g., 1500">
+            <label for="increase-rate">Increase Rate:</label>
+            <input type="number" inputmode="decimal" id="increase-rate" step="1" placeholder="e.g., 5%">
+                <button class="yes-btn">Calculate</button>
             </div>
         </div>
 
-        <!-- Question 2 Frame -->
-        <div class="frame" id="question2-frame">
-            <div class="question">For-Profit Business?</div>
-            <div class="button-container">
-                <button class="yes-btn">Yes</button>
-                <button class="no-btn">No</button>
-            </div>
-        </div>
-
-        <!-- Input Frame -->
-        <div class="frame" id="input-frame">
-            <label for="electric-bill">What is your average electric bill?</label>
-			<input type="number" inputmode="decimal" id="electric-bill" step="0.01" placeholder="e.g., 1500">
-            <label for="electric-rate">What is your electric rate?</label>
-            <input type="number" inputmode="decimal" id="electric-rate" step="0.01" placeholder="e.g., 0.12">
-            <div class="button-container">
-                <button class="calculate-btn">Calculate</button>
-            </div>
-        </div>
 
         <!-- Result Frame -->
         <div class="frame" id="result-frame">
